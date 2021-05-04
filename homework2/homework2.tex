@@ -1,0 +1,127 @@
+\documentclass{article} 
+
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+
+\usepackage{fullpage}
+\usepackage[margin = .75 in]{geometry}
+\usepackage[leqno]{amsmath}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+
+\usepackage{graphicx,color,url,hyperref}
+\usepackage{epsfig}
+\fancyhf{}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+
+\newcommand{\NN}{\mathbf N}
+\newcommand{\RR}{\mathbf R}
+\newcommand{\CC}{\mathbf C}
+\newcommand{\ZZ}{\mathbf Z}
+\newcommand{\ZZn}[1]{\ZZ/{#1}\ZZ}
+\newcommand{\QQ}{\mathbf Q}
+\newcommand{\nn}{\mathbb N}
+\newcommand{\rr}{\mathbb R}
+\newcommand{\cc}{\mathbb C}
+\newcommand{\zz}{\mathbb Z}
+\newcommand{\zzn}[1]{\zz/{#1}\zz}
+\newcommand{\qq}{\mathbb Q}
+\newcommand{\calM}{\mathcal M}
+\newcommand{\latex}{\LaTeX}
+\newcommand{\tex}{\TeX}
+\newcommand{\dd}{{\rm d}}
+\newcommand{\sm}{\setminus} 
+
+\title{Homework 2}
+\author{Sunny Lee}
+\date{March 17, 2021}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{March 17, 2021}
+\lhead{Sunny Lee}
+\chead{Homework 2}
+\rfoot{Page \thepage}
+
+\begin{document}
+
+\begin{enumerate}
+    \item Let $f(x) = x^3+2x-1$, $\delta_0 = \frac{1}{2}$
+    and $|x-1| < \delta$. Then, 
+    given $\epsilon > 0$, we obtain $|f(x) - f(1)| = |x^3+2x-3| = |x-1||x^2+x+3|$. 
+    Since $x\in (\frac{1}{2}, \frac{3}{2})$, $|x-1||x^2+x+3| \leq |x-1||\frac{27}{4}|$. 
+    If we let $\delta_1 = \frac{4\epsilon}{27}$, $|f(x) - f(1)| < |x-1||\frac{27}{4}|
+    < \frac{4\epsilon}{27} \frac{27}{4} = \epsilon$
+    Thus, if we let $\delta \ min(\frac{1}{2}, \frac{4\epsilon}{27})$, 
+    $|f(x) - f(1)| < \epsilon$. Thus, $f(x)$ is continuous at $x = 1$.
+    
+    \item Let $f(x) = x^2$, $\delta_0 = \frac{a}{2}$ and $|x-a| < \delta$. Since $f$ 
+    is an even function, we can assume $a, x \geq 0$. Since $|x-a| < \delta$, 
+    $x\in (\frac{a}{2}, \frac{3a}{2})$. Given $\epsilon > 0$: $|f(x) - f(a)| = 
+    |x^2 - a^2| = |x - a||x + a| < |x - a||\frac{5a}{2}|$. If we let $\delta_1 = 
+    \frac{2\epsilon}{5a}$, $|x - a||\frac{5a}{2}| < \frac{2\epsilon}{5a} \frac{5a}{2}
+     = \epsilon$. Thus, if we let $\delta = min(\frac{a}{2}, \frac{2\epsilon}{5a})$
+    $f$ is continuous at any $x\in \rr$. 
+
+    \item Let $f:\rr \rightarrow \rr$ be defined by: 
+    \[
+    \begin{cases}
+        \frac{1}{x} & x\neq 0 \\
+        c & x = 0 \\
+    \end{cases}
+    \]
+
+    Let $x_n$ be the sequence defined by $x_n = \{\frac{1}{n}\}$. Thus, as 
+    $n\rightarrow \infty$, $x_n\rightarrow 0$. Since $x_n\rightarrow 0$, 
+    $f(x_n)\rightarrow \infty$. However, $f(0) = c$. Therefore, $f$ is discontinuous 
+    at $x = 0$. 
+
+    \item Let $g(x) = \frac{h(x)}{f(x)} = \frac{x^2+2x-1}{x^2+1}$. Since $h$ and $f$ 
+    are both polynomials, they are both continuous on all of $\rr$. Thus, we must only 
+    check if $f$ is non zero everywhere. Since $x^2 >= 0$ for all $x\in \rr$, 
+    $x^2 + 1 >= 1 > 0$ for all $x\in \rr$. Thus, $f$ is never zero anywhere on $\rr$. 
+    Thus, $g$ is continuous everywhere.
+
+    \item Let $f(x) = x^2 - x$ and $x^2 < x$. Since $x^2 < x$, $x^2 - x < 0$. Since 
+    $x^2 - x < 0$, $0 < x < 1$. Thus, $S$ is the open set $(0, 1)$ and thus, $S$ is not 
+    closed. $f$ does not obtain a maximum value as the maximum values are attained at 
+    $0$ and $1$ which are not in the set $S$. However, $f$ does attain a minimum 
+    at $.5$. 
+
+    \item Since the domain is closed and the function is defined on the entire interval, 
+    this function reaches a minimum at $x = 0$ where $f(0) = 0$ and a maximum 
+    at $x = \frac{2}{\pi}$ where $f(\frac{2}{\pi}) = \frac{2}{\pi} + \frac{2}{\pi}
+    sin(\frac{\pi}{2})$. 
+
+    \item For all $x, y \in \rr$, $|cos(x) - cos(y)| = 2|sin(\frac{x+y}{2})
+    sin(\frac{x-y}{2})| \leq 2|sin(\frac{x-y}{2})| < 2|\frac{x-y}{2}| = |x-y|$. Thus, 
+    if we let $\delta = \epsilon$, $|f(x) - f(y)| < \epsilon$ if $|x-y| < \delta$. Thus, 
+    $f(x) = cos(x)$ is uniformly continuous on all of $\rr$. 
+
+    \item Let $f(x) = 5x+8$, $\delta = \frac{\epsilon}{5}$ and $|x - y| < \delta$. 
+    Then, $|f(x) - f(y)| = |5x+8 - 5y-8| = 5|x - y| < 5\frac{\epsilon}{5} = \epsilon$
+    Thus, $f$ is uniformly continuous on $[0, \infty)$. 
+
+    \item Let $f(x) = x^3$ on $[0, \infty)$ and let $\epsilon = \frac{1}{2}$.
+    Let $x_n = \{\sqrt[3]{n}\}$ and $y_n = \{\sqrt[3]{n+1}\}$. Then, $|x_n - y_n| 
+    \rightarrow 0$ as $n \rightarrow 0$. However, $|f(x_n) - f(y_n)| = |n - n - 1| = 1$
+    for all $n\in \nn$. Thus, by the proposition in class, $lim_{n\rightarrow \infty} 
+    |x_n - y_n| = 0$ and $|f(x_n) - f(y_n)| \geq \epsilon$. Thus, we conclude that 
+    $f(x) = x^3$ is not uniformly continuous. 
+
+    \item Let $f(x) = cos(x)$ where $x\in \rr$. Then, $f'(x) = -sin(x)$ Since $sin(x)$
+    is bounded by $[-1, 1]$, the derivative is bounded below by $-1$ and above by $1$. 
+    Thus, $|f'| \leq 1$. Since $f$ is a function with a bounded derivative, $cos(x)$
+    is continuous on all of $\rr$. 
+
+
+\end{enumerate}
+
+\end{document} 
